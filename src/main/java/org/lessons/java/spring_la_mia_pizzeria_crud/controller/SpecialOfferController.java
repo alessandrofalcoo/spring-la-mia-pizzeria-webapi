@@ -56,4 +56,12 @@ public class SpecialOfferController {
         return "redirect:/pizze/" + formSpecialOffer.getPizza().getId();
 
     }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        SpecialOffer offer = repository.findById(id).orElseThrow();
+        repository.delete(offer);
+
+        return "redirect:/pizze/" + offer.getPizza().getId();
+    }
 }

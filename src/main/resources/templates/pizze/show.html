@@ -61,6 +61,11 @@
                                 <a th:href="@{/offers/edit/{id}(id=${specialOffer.id})}"
                                     class="btn btn-success btn-sm">Update</a>
                             </td>
+                            <td>
+                                <form th:action="@{/offers/delete/{id}(id=${specialOffer.id})}" method="post">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
                         </tr>
 
                     </tbody>
