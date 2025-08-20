@@ -40,6 +40,9 @@ public class PizzaService {
     }
 
     public Pizza create(Pizza pizza) {
+        for (SpecialOffer offer : pizza.getSpecialOffers()) {
+            offer.setPizza(pizza); // collega manualmente la pizza ad ogni offerta
+        }
         return pizzaRepository.save(pizza);
     }
 

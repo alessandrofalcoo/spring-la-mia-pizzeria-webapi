@@ -31,7 +31,7 @@ public class SpecialOfferController {
         }
 
         repository.save(formSpecialOffer);
-        return "redirect:/pizze/index" + formSpecialOffer.getPizza().getId();
+        return "redirect:/pizze/" + formSpecialOffer.getPizza().getId();
     }
 
     // metodo che restituisce una edit da compilare

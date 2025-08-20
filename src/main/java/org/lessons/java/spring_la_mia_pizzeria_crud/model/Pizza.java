@@ -1,5 +1,6 @@
 package org.lessons.java.spring_la_mia_pizzeria_crud.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -42,13 +43,13 @@ public class Pizza {
     // (one-to-many)
 
     @OneToMany(mappedBy = "pizza")
-    private List<SpecialOffer> specialOffers;
+    private List<SpecialOffer> specialOffers = new ArrayList<>();
 
     // aggiunta di una relazione tra piú pizze e piú ingredienti (many-to-many)
 
     @ManyToMany
     @JoinTable(name = "pizza_ingredient", joinColumns = @JoinColumn(name = "pizza_id"), inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
-    private List<Ingredient> ingredients;
+    private List<Ingredient> ingredients = new ArrayList<>();
 
     public Pizza() {
     }
